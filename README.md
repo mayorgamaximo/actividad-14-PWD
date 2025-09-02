@@ -1,5 +1,3 @@
-¡Claro! Con los nuevos estilos y la estructura de código actualizada, aquí tienes un archivo README.md renovado. Este README refleja la nueva estética tecnológica y las mejoras en la interfaz, manteniendo la claridad para cualquier usuario o desarrollador.
-
 🤖 Generador QR Pro
 ¡Bienvenido al futuro de los códigos QR! Generador QR Pro es una aplicación web de vanguardia diseñada para crear códigos QR personalizados con una interfaz moderna y tecnológica. Perfecta para presentaciones, proyectos y cualquier necesidad de compartir información de manera digital.
 
