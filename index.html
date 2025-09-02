@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generador de códigos QR moderno y personalizable. Convierte URLs en códigos QR al instante.">
+    <title>Generador QR Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1><i class="fas fa-qrcode"></i> Generador QR Pro</h1>
+            <p class="tagline">Convierte tus URLs en códigos QR personalizados de forma instantánea.</p>
+        </header>
+
+        <main class="app-main">
+            <div class="input-form">
+                <input type="url" id="urlInput" placeholder="https://tu-proyecto.com" required>
+                <button id="generateBtn" class="action-btn"><i class="fas fa-magic"></i> Generar</button>
+            </div>
+    
+            <section class="custom-options">
+                <h2 class="section-title">Personaliza tu QR</h2>
+                <div class="color-picker-group">
+                    <span class="option-label">Color:</span>
+                    <label class="color-radio">
+                        <input type="radio" name="qrColor" value="#000000" checked>
+                        <span class="color-box black-color" title="Negro"></span>
+                    </label>
+                    <label class="color-radio">
+                        <input type="radio" name="qrColor" value="#4CAF50">
+                        <span class="color-box green-color" title="Verde"></span>
+                    </label>
+                    <label class="color-radio">
+                        <input type="radio" name="qrColor" value="#2196F3">
+                        <span class="color-box blue-color" title="Azul"></span>
+                    </label>
+                    <label class="color-radio">
+                        <input type="radio" name="qrColor" value="#F44336">
+                        <span class="color-box red-color" title="Rojo"></span>
+                    </label>
+                </div>
+                <div class="size-selector-group">
+                    <span class="option-label">Tamaño:</span>
+                    <select id="sizeSelect" class="size-select">
+                        <option value="128">128x128 px</option>
+                        <option value="192" selected>192x192 px</option>
+                        <option value="256">256x256 px</option>
+                        <option value="320">320x320 px</option>
+                    </select>
+                </div>
+            </section>
+    
+            <div id="qrcode-output" class="qrcode-output-area"></div>
+            
+            <button id="downloadBtn" class="action-btn download-btn" disabled>
+                <i class="fas fa-download"></i> Descargar QR
+            </button>
+        </main>
+
+        <footer class="app-footer">
+            <p class="tip-text">💡 Escanea el código con tu móvil para probarlo al instante.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

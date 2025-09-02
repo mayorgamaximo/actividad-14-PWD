@@ -1,0 +1,348 @@
+:root {
+    --bg-dark: #2c2f33; /* Fondo oscuro principal */
+    --surface-light: #36393f; /* Superficie de elementos */
+    --surface-dark: #23272a; /* Fondo de elementos más profundos */
+    --text-primary: #ffffff; /* Texto principal blanco */
+    --text-secondary: #aaaaaa; /* Texto secundario gris claro */
+    --neon-blue: #00d4ff; /* Azul neón brillante */
+    --neon-purple: #9b59b6; /* Púrpura neón para detalles */
+    --border-neumo-light: #42464b; /* Borde claro para neumorfismo */
+    --border-neumo-dark: #1e2023; /* Borde oscuro para neumorfismo */
+    --shadow-neumo-light: rgba(255, 255, 255, 0.05); /* Sombra clara para neumorfismo */
+    --shadow-neumo-dark: rgba(0, 0, 0, 0.3); /* Sombra oscura para neumorfismo */
+}
+
+/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal estilo Neumorfismo */
+.container {
+    max-width: 650px;
+    width: 100%;
+    background: var(--surface-light);
+    padding: 2.5rem;
+    border-radius: 25px; /* Bordes más suaves */
+    box-shadow: 
+        10px 10px 20px var(--shadow-neumo-dark),
+        -10px -10px 20px var(--shadow-neumo-light); /* Sombra neumórfica */
+    border: 1px solid var(--border-neumo-light); /* Borde sutil */
+    transition: all 0.3s ease;
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.app-header h1 {
+    color: var(--neon-blue); /* Título en neón */
+    font-size: 3rem; /* Más grande */
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); /* Efecto neón */
+}
+
+.app-header .tagline {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Input y Botón de Generar */
+.input-form {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 15px;
+}
+
+#urlInput {
+    flex: 1;
+    padding: 16px;
+    background-color: var(--surface-dark); /* Fondo oscuro para el input */
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    box-shadow: inset 5px 5px 10px var(--shadow-neumo-dark),
+                inset -5px -5px 10px var(--shadow-neumo-light); /* Neumorfismo inverso */
+    transition: all 0.3s ease;
+}
+
+#urlInput::placeholder {
+    color: var(--text-secondary);
+}
+
+#urlInput:focus {
+    outline: none;
+    box-shadow: inset 3px 3px 6px var(--shadow-neumo-dark),
+                inset -3px -3px 6px var(--shadow-neumo-light),
+                0 0 5px var(--neon-blue); /* Neón al enfocar */
+}
+
+.action-btn {
+    padding: 16px 30px;
+    background-color: var(--neon-blue);
+    color: var(--bg-dark); /* Texto oscuro para contraste */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 10px var(--shadow-neumo-dark),
+                -5px -5px 10px var(--shadow-neumo-light),
+                0 0 15px var(--neon-blue); /* Neumorfismo y neón */
+}
+
+.action-btn:hover {
+    background-color: #00eaff; /* Un poco más brillante */
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 14px var(--shadow-neumo-dark),
+                -7px -7px 14px var(--shadow-neumo-light),
+                0 0 20px var(--neon-blue);
+}
+
+.action-btn:disabled {
+    background-color: var(--surface-dark);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: inset 3px 3px 6px var(--shadow-neumo-dark),
+                inset -3px -3px 6px var(--shadow-neumo-light);
+}
+
+/* Opciones de personalización */
+.custom-options {
+    margin-bottom: 2.5rem;
+    background-color: var(--surface-dark);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px var(--shadow-neumo-dark),
+                inset -5px -5px 10px var(--shadow-neumo-light); /* Neumorfismo inverso */
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--neon-purple); /* Título de sección en neón púrpura */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px var(--neon-purple);
+}
+
+.color-picker-group, .size-selector-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.option-label {
+    margin-right: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap; /* Evita que el texto se rompa */
+}
+
+.color-radio {
+    display: flex; /* Para alinear el radio y el color box */
+    align-items: center;
+    margin-right: 15px;
+}
+
+.color-radio input[type="radio"] {
+    display: none;
+}
+
+.color-box {
+    width: 30px; /* Más grande */
+    height: 30px; /* Más grande */
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 2px 2px 5px var(--shadow-neumo-dark),
+                -2px -2px 5px var(--shadow-neumo-light); /* Neumorfismo en los círculos de color */
+}
+
+.color-radio input[type="radio"]:checked + .color-box {
+    transform: scale(1.1); /* Ligeramente más pequeño para el efecto de presión */
+    border-color: var(--neon-blue); /* Borde neón al seleccionar */
+    box-shadow: inset 1px 1px 3px var(--shadow-neumo-dark),
+                inset -1px -1px 3px var(--shadow-neumo-light),
+                0 0 10px var(--neon-blue); /* Efecto de luz al seleccionar */
+}
+
+/* Colores personalizados para los círculos */
+.black-color { background-color: #000000; }
+.green-color { background-color: #2ecc71; } /* Verde neón */
+.blue-color { background-color: #3498db; } /* Azul neón */
+.red-color { background-color: #e74c3c; } /* Rojo neón */
+
+.size-select {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--surface-dark);
+    color: var(--text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: inset 3px 3px 6px var(--shadow-neumo-dark),
+                inset -3px -3px 6px var(--shadow-neumo-light); /* Neumorfismo inverso */
+    transition: all 0.3s ease;
+    appearance: none; /* Elimina la flecha por defecto del select */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23aaaaaa'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Flecha SVG personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.size-select:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 4px var(--shadow-neumo-dark),
+                inset -2px -2px 4px var(--shadow-neumo-light),
+                0 0 5px var(--neon-blue);
+}
+
+
+/* Área de visualización del QR */
+.qrcode-output-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Más espacio */
+    margin: 3rem 0;
+    background-color: var(--surface-dark);
+    border-radius: 20px;
+    border: 2px dashed var(--neon-purple); /* Borde punteado neón */
+    box-shadow: inset 5px 5px 10px var(--shadow-neumo-dark),
+                inset -5px -5px 10px var(--shadow-neumo-light),
+                0 0 15px rgba(155, 89, 182, 0.5); /* Sombra neón */
+}
+
+#qrcode-output img {
+    max-width: 90%;
+    height: auto;
+    border: 5px solid var(--neon-blue); /* Borde de la imagen QR neón */
+    padding: 10px;
+    background: var(--surface-light);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--neon-blue), 0 0 30px rgba(0, 212, 255, 0.4); /* Resplandor neón alrededor del QR */
+}
+
+/* Botón de descarga */
+.download-btn {
+    background-color: var(--neon-purple); /* Botón de descarga púrpura neón */
+    display: block;
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    box-shadow: 5px 5px 10px var(--shadow-neumo-dark),
+                -5px -5px 10px var(--shadow-neumo-light),
+                0 0 15px var(--neon-purple); /* Sombra neón */
+}
+
+.download-btn:hover {
+    background-color: #a766c6; /* Ligeramente más brillante */
+    box-shadow: 7px 7px 14px var(--shadow-neumo-dark),
+                -7px -7px 14px var(--shadow-neumo-light),
+                0 0 20px var(--neon-purple);
+}
+
+/* Footer */
+.app-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.tip-text {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 1rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 2rem;
+    }
+    .app-header h1 {
+        font-size: 2.5rem;
+    }
+    .input-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .action-btn {
+        width: 100%;
+    }
+    .custom-options {
+        padding: 1.5rem;
+    }
+    .option-label {
+        margin-right: 1rem;
+    }
+    .color-picker-group, .size-selector-group {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 1.5rem;
+        margin: 10px auto;
+        border-radius: 15px;
+    }
+    .app-header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .app-header .tagline {
+        font-size: 0.9rem;
+    }
+    #urlInput {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    .action-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .qrcode-output-area {
+        min-height: 200px;
+        margin: 2rem 0;
+    }
+    .download-btn {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    .tip-text {
+        font-size: 0.85rem;
+    }
+}
